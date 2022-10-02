@@ -1,6 +1,6 @@
 {
-  "name": "Getting Started Example",
-  "description": "Build an Extension!",
+  "name": "MercadoLibre Currency Converter",
+  "description": "Convert the price of a product from one currency to another",
   "version": "1.0",
   "manifest_version": 3,
   "background": {
