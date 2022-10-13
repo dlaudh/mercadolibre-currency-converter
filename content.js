@@ -211,29 +211,29 @@ function changes_verificator(stored_data, target) {
 
 var is_correct = 0;
 
-window.onload = function () {
-  var current_stored_data = get_storaged_data();
-  current_stored_data.then((stored_data) => {
-    if (stored_data.last_update_date == date) {
-      update_all_prices(stored_data, true, target);
+// window.onload = function () {
+//   var current_stored_data = get_storaged_data();
+//   current_stored_data.then((stored_data) => {
+//     if (stored_data.last_update_date == date) {
+//       update_all_prices(stored_data, true, target);
 
-      var repeat = setInterval(function () {
-        changes_verificator(stored_data, target);
-      }, 4000);
-    } else {
-      update_all_prices(stored_data, false, target);
+//       var repeat = setInterval(function () {
+//         changes_verificator(stored_data, target);
+//       }, 4000);
+//     } else {
+//       update_all_prices(stored_data, false, target);
 
-      var repeat = setInterval(function () {
-        changes_verificator(stored_data, target);
-      }, 4000);
-    }
-  });
-};
+//       var repeat = setInterval(function () {
+//         changes_verificator(stored_data, target);
+//       }, 4000);
+//     }
+//   });
+// };
 
-chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-  var current_stored_data = get_storaged_data();
-  current_stored_data.then((stored_data) => {
-    console.log("Updating to " + request.target);
-    update_all_prices(stored_data, true, request.target);
-  });
-});
+// chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
+//   var current_stored_data = get_storaged_data();
+//   current_stored_data.then((stored_data) => {
+//     console.log("Updating to " + request.target);
+//     update_all_prices(stored_data, true, request.target);
+//   });
+// });
